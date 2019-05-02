@@ -1,0 +1,37 @@
+import java.io.*;
+class StudentRank
+{
+    String nm[]=new String[50];
+    double m[]=new double[50];
+    public void sort()throws IOException
+    {
+        int i,j;
+        double tmp;
+        String temp;
+        BufferedReader xy=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter 50 names of students and their marks: ");
+        for(i=0;i<5;i++)
+        {
+            nm[i]=xy.readLine();
+            m[i]=Integer.parseInt(xy.readLine());
+        }                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+        for(i=0;i<4;i++)
+        {
+            for(j=0;j<4-i;j++)
+            {
+                if(m[j]<m[j+1])
+                {
+                    tmp=m[j];
+                    m[j]=m[j+1];
+                    m[j+1]=tmp;
+                    temp=nm[j];
+                    nm[j]=nm[j+1];
+                    nm[j+1]=temp;
+                }
+            }
+        }
+         System.out.println("Rank \t Name ");
+        for(i=0;i<5;i++)
+            System.out.println((i+1)+" \t "+nm[i]);
+    }
+}         
